@@ -24,14 +24,14 @@ class App {
         this.pageHeader.updateAverage(average)
 		}
 
-		createGrade() {
+    createGrade(name, course, grade) {
 			$.ajax({
 				type: "POST",
 				url: "https://sgt.lfzprototypes.com/api/grades",
 				data: {
-					name: formName,
-					course: formCourse,
-					grade: formGrade
+					"name": name,
+					"course": course,
+					"grade": grade
 				},
 
 				headers: {
