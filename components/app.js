@@ -39,6 +39,7 @@ class App {
             success: this.handleGetGradesSuccess
 
         })
+    }
 
     createGrade(name, course, grade) {
 			$.ajax({
@@ -78,12 +79,10 @@ class App {
         handleDeleteGradeSuccess() {
             this.getGrades()
         }
-    }
 
-
-    start() {
-				this.getGrades()
-				this.gradeForm.onSubmit(this.createGrade)
+        start() {
+	        this.getGrades()
+            this.gradeForm.onSubmit(this.createGrade)
+            this.gradeTable.onDeleteClick(this.deleteGrade)
     }
-
-    }
+}

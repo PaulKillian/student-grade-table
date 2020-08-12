@@ -1,25 +1,49 @@
 class GradeTable {
-    constructor(tableElement) {
+    constructor(tableElement, noGradesElement) {
         this.tableElement = tableElement
+        this.noGradesElement = noGradesElement
     }
 
-    updateGrades(grades) {
-        var tbody = this.tableElement.querySelector("tbody");
-        tbody.innerHTML = " "
-        for(var i = 0; i < grades.length; i++) {
-            var tr = document.createElement('tr')
-            var name = document.createElement('td')
-            name.textContent = grades[i].name
-            var course = document.createElement('td')
-            course.textContent = grades[i].course
-            var grade = document.createElement('td')
-            grade.textContent = grades[i].grade
-
-            tbody.appendChild(tr)
-            tr.appendChild(name)
-            tr.appendChild(course)
-            tr.appendChild(grade)
-
-        }
+  updateGrades(grades) {
+    var tbody = this.tableElement.querySelector("tbody");
+    tbody.innerHTML = " "
+    for (var i = 0; i < grades.length; i++) {
+      var tr = this.renderGradeRow(grades[i], this.deleteGrade)
+      tbody.appendChild(tr)
     }
+    if(grades === " ") {
+        var p = document.querySelector("p")
+        p.classList.remove("d-none")
+    }
+  }
+
+  onDeleteClick(deleteGrade) {
+    this.deleteGrade = deleteGrade
+  }
+
+  renderGradeRow(data, deleteGrade) {
+    var tbody = this.tableElement.querySelector("tbody");
+    var operationsTr = document.createElement('tr')
+    var operationsTd1 = document.createElement('td')
+    operationsTd1.textContent = data.name
+    var operationsTd2 = document.createElement('td')
+    operationsTd2.textContent = data.course
+    var operationsTd3 = document.createElement('td')
+    operationsTd3.textContent = data.grade
+    var operationsTd4 = document.createElement('td')
+    var deleteButton = document.createElement('button')
+    deleteButton.textContent = "DELETE"
+    deleteButton.className = "btn btn-primary"
+    tbody.appendChild(operationsTr)
+    operationsTr.appendChild(operationsTd1)
+    operationsTr.appendChild(operationsTd2)
+    operationsTr.appendChild(operationsTd3)
+    operationsTr.appendChild(operationsTd4)
+    operationsTd4.appendChild(deleteButton)
+
+    deleteButton.addEventListener('click', function() {
+        deleteGrade(data.id)
+    })
+    return operationsTr
+  }
 }
