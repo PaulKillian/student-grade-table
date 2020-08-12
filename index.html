@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 </head>
 <body>
-    <header class="row justify-content-around">
-      <h1 class="col-9">Students Grade Table</h1>
+    <header class="row justify-content-center">
+      <h1 class="col-5">Students Grade Table</h1>
       <h2 class="col-1">Average</h2>
       <h2><span class=" col badge badge-secondary"></span></h2>
     </header>
-	<div class="row justify-content-around">
-    <table class="col-sm-8 table table-dark table-striped table-bordered">
-        <thead>
+	<div class="row justify-content-center">
+    <table class="col-sm-5 ml-1 table table-light table-striped table-bordered">
+        <thead class="bg-primary text-light">
           <tr>
             <th scope="col">Student Name</th>
             <th scope="col">Course</th>
@@ -24,16 +24,31 @@
         </thead>
             <tbody>
             </tbody>
-    </table>
-    <form class="form-group col-sm-3">
-			<input type="Name" class="form-control" id="nameFormControlInput1" placeholder="Name">
-			<input type="Course" class="form-control" id="coureFormControlInput1" placeholder="Course">
-			<input type="Grade" class="form-control" id="gradeFormControlInput1" placeholder="Grade">
-			<div class="row justify-content-end">
-				<button type="submit" class="btn btn-outline-primary">Add</button>
-				<button type="reset" class="btn btn-outline-dark">Cancel</button>
-			</div>
-    </form>
+		</table>
+		<div class="col-sm-2">
+			<h2>Add Grade</h2>
+			<form action="" class="form-group">
+				<div class="input-group-prepend row ml-1 mb-2">
+					<div class="input-group-text">
+				    <i class="fas fa-user-alt mt-2"></i><input type="Name" class="form-control mb-2" id="nameFormControlInput1" placeholder="Name">
+				  </div>
+			  </div>
+				<div class="input-group-prepend row ml-1 mb-2">
+					<div class="input-group-text">
+						<i class="fa fa-newspaper"></i><input type="Name" class="form-control mb-2" id="nameFormControlInput1" placeholder="Name">
+				  </div>
+			  </div>
+				<div class="input-group-prepend row ml-1 mb-2">
+					<div class="input-group-text">
+					  <i class="fa fa-graduation-cap"></i><input type="Name" class="form-control mb-2" id="nameFormControlInput1" placeholder="Name">
+				  </div>
+			  </div>
+				<div class="row justify-content-end col-11">
+					<button type="submit" class="btn btn-outline-primary ml-1">Add</button>
+					<button type="reset" class="btn btn-outline-dark">Cancel</button>
+				</div>
+			</form>
+		</div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
   <script src="components/app.js"></script>

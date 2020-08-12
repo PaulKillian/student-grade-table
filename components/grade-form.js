@@ -3,7 +3,7 @@ class GradeForm {
 		this.formElement = formElement
 		this.handleSubmit = this.handleSubmit.bind(this)
 		var form = document.querySelector('form');
-		form.addEventListener('submit', this.formElement)
+		form.addEventListener('submit', this.handleSubmit)
 	}
 
 	onSubmit(createGrade) {
@@ -12,6 +12,12 @@ class GradeForm {
 
 	handleSubmit(event) {
 		event.preventDefault() 
-			console.log("hi")
+		console.log(event.target)
+		var formData = new FormData(event.target)
+		var formName = formData.get("name")
+		var formCourse = formData.get("course")
+		var formGrade = formData.get("grade")
+		this.createGrade(formName, formCourse, formGrade)
+		event.target.reset()
 	}
 }
