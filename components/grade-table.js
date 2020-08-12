@@ -7,13 +7,13 @@ class GradeTable {
   updateGrades(grades) {
     var tbody = this.tableElement.querySelector("tbody");
     tbody.innerHTML = " "
+    if (grades.length === 0) {
+        var p = document.querySelector("p")
+        p.classList.remove("d-none")
+    }
     for (var i = 0; i < grades.length; i++) {
       var tr = this.renderGradeRow(grades[i], this.deleteGrade)
       tbody.appendChild(tr)
-    }
-    if(grades === " ") {
-        var p = document.querySelector("p")
-        p.classList.remove("d-none")
     }
   }
 
