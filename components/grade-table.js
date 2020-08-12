@@ -14,7 +14,7 @@ class GradeTable {
             course.textContent = grades[i].course
             var grade = document.createElement('td')
             grade.textContent = grades[i].grade
-            
+
             tbody.appendChild(tr)
             tr.appendChild(name)
             tr.appendChild(course)

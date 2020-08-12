@@ -9,7 +9,7 @@ class App {
 				this.handleCreateGradeError = this.handleCreateGradeError.bind(this)
 				this.handleCreateGradeSuccess = this.handleCreateGradeSuccess.bind(this)
     }
-    
+
     handleGetGradesError(error) {
         console.error(error)
     }
@@ -23,21 +23,21 @@ class App {
         var average = allGrades / grades.length;
         this.pageHeader.updateAverage(average)
 		}
-		
+
 		createGrade() {
 			$.ajax({
 				type: "POST",
 				url: "https://sgt.lfzprototypes.com/api/grades",
 				data: {
-					"name": "Paul",
-					"course": "Web Development",
-					"grade": "100"
+					name: formName,
+					course: formCourse,
+					grade: formGrade
 				},
-				
+
 				headers: {
 					"X-Access-Token": "t6jFgSWy"
 				},
-				
+
 				error: this.handleCreateGradeError,
 				success: this.handleCreateGradeSuccess
 			})
