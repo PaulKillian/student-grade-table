@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View All Grades</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+</head>
+<body>
+	<div class="container">
+		<header class="row mt-5">
+			<h1 class="col col-sm-12 col-md-12 col-lg-7 text-lg-left text-md-center text-sm-center">Student Grade Table</h1>
+			<h3 class="col col-sm-12 col-md-12 col-lg-4 text-lg-right text-md-center text-sm-center mt-3">Average Grade<span
+					class="badge badge-secondary ml-2 border-3 border-dark"></span></h3>
+		</header>
+	  <div class="row mt-5 justify-content-center">
+    <table class="col-sm ml-1 table table-light table-striped table-bordered">
+     <thead class="bg-primary text-light">
+      <tr>
+       <th scope="col">Student Name</th>
+       <th scope="col">Course</th>
+					  <th scope="col">Grade</th>
+						 <th scope="col">Operations</th>
+      </tr>
+    </thead>
+				<tbody>
+				</tbody>
+			</table>
+			<p class="d-none">No Grades Recorded</p>
+			<div class="col-sm-12 col-md-12 col-lg-4">
+			<form action="" class="form-group">
+					<h2 class="text-center">Add Grade</h2>
+					<div class=" ml-1 mb-2">
+						<div class="input-group-text">
+									<i class="fas fa-user-alt mt-2"></i><input name="name" type="text" class="form-control mb-2" id="nameFormControlInput1" placeholder="Name">
+							</div>
+						</div>
+					<div class="ml-1 mb-2">
+						<div class="input-group-text">
+							<i class="fa fa-newspaper"></i><input name="course" type="text" class="form-control mb-2" id="nameFormControlInput1" placeholder="Course">
+							</div>
+						</div>
+					<div class="ml-1 mb-2">
+						<div class="input-group-text">
+								<i class="fa fa-graduation-cap"></i><input name="grade" type="text" class="form-control mb-2" id="nameFormControlInput1" placeholder="Grade">
+							</div>
+						</div>
+					<div class="row justify-content-end col-11">
+						<button type="submit" class="btn btn-outline-primary ml-1">Add</button>
+						<button type="reset" class="btn btn-outline-dark">Cancel</button>
+					</div>
+				</form>
+			</div>
+				</div>
+		</div>
+	</div>
+</div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+  <script src="components/app.js"></script>
+  <script src="components/grade-table.js"></script>
+  <script src="components/page-header.js"></script>
+	<script src="components/grade-form.js"></script>
+	<script src="main.js"></script>
+</body>
+</html>
